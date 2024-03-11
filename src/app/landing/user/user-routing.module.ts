@@ -1,17 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { UserPageRoutingModule } from './user-routing.module';
 
 import { UserPage } from './user.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: UserPage
-  }
-];
-
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    UserPageRoutingModule
+  ],
+  declarations: [UserPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class UserPageRoutingModule {}
+export class UserPageModule { }
